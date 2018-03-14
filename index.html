@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  <div class="panel panel-info">
+      <div class="panel-heading">Learn by doing</div>
+      <div class="panel-body">Each computer has a built-in instruction set that it knows how to execute by design.
+          <form id="myForm">
+              <span class="glyphicon glyphicon-comment"  onclick="radiotruehintbox()"></span> 
+              <div class="radio">
+                <label><input type="radio" id="true" onclick="radiotruehintbox()">True</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" id="false" onclick="radiofalsehintbox()">False</label>
+              </div>
+            <div class="alert alert-success alert-dismissible" id="truebox" style= display:none>
+                  <div class="close" data-dismiss="alert" aria-label="close">&times;</div>
+                  <strong>&#10004;</strong> This alert box could indicate a successful or positive action.
+            </div>
+            <div class="alert alert-danger alert-dismissible" id="falsebox" style= display:none>
+                
+                <div class="close" data-dismiss="alert" aria-label="Close">&times;</div>
+                <strong>&#10008;</strong> This alert box could indicate a dangerous or potentially negative action.
+              </div>
+          <p>computer uses intelligence to execute instructions.</p>
+          <span class="glyphicon glyphicon-comment" onclick="radiofalsehintbox()"></span></p>
+              <div class="radio">
+                <label><input type="radio" id="true_2" onclick="radiohintbox()">True</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio">False</label>
+              </div>
+          </form>
+          <button type="button" class="btn btn-primary btn-md" OnClick="ResetClick()" >Reset </button>     
+      </div>
+  </div>    
+</div>
+
+<script>
+function radiotruehintbox() {
+document.getElementById("false").checked = false;
+document.getElementById('falsebox').style.display='none';
+document.getElementById('truebox').style.display='block';
+
+}
+function radiofalsehintbox() {
+document.getElementById("true").checked = false;
+document.getElementById('truebox').style.display='none';
+document.getElementById('falsebox').style.display='block';
+
+
+}
+function ResetClick() {
+    document.getElementById("myForm").reset();
+    document.getElementById("truebox").reset();
+    document.getElementById("falsebox").reset();
+}
+</script>
+</body>
+</html>
